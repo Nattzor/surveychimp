@@ -5,14 +5,14 @@ Content-Type: application/json
 
 {
     "recipient": {
-        "name": "Jonatan",
+        "name": "Meeko",
         "mobileNumber": "070 123 12 12"
     }
 }
 
 ###
 
-GET {{baseUrl}}/survey/635a3b76447595cdc91bcfdd
+GET {{baseUrl}}/survey/635bd74adf7ebe382b6861ba
 
 ###
 
