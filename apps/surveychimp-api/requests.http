@@ -6,7 +6,7 @@ Content-Type: application/json
 {
     "recipient": {
         "name": "Jonatan",
-        "mobileNumber": "+46 72 300 36 42"
+        "mobileNumber": "070 123 12 12"
     }
 }
 
@@ -20,8 +20,6 @@ PATCH {{baseUrl}}/survey/635a3b76447595cdc91bcfdd
 Content-Type: application/json
 
 {
-    "response": {
-        "rating": 3,
-        "comment": ""
-    }
+    "rating": 3,
+    "comment": "Det var toppen!"
 }
