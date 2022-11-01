@@ -1,16 +1,27 @@
-name: surveymonkey
+databases:
+- cluster_name: mongo-db
+  db_name: prod
+  engine: MONGODB
+  name: mongo-db
+  production: true
+  version: "5"
+domains:
+- domain: survey.surveychimp.me
+  type: PRIMARY
+name: surveymonkey-production
 region: ams
 services:
 - build_command: npx nx run surveychimp-api:build:production
   environment_slug: node-js
   envs:
-  - key: MONGO_DATABASE_URI
-    scope: RUN_AND_BUILD_TIME
-    type: SECRET
-    value: EV[1:BwCyVIi/hAxm0DAEYR0r/7ghnYhOcfl9:lm1z/0A4OYO67PqH4zK7sK7rt7ihbrdR+mizpk54Qc3K4W8EsdMTF/gA4G6lf0NGlnZUu0RqgRmDEJ+DghMm4vhHiSHc+bHNZjTpyRY+PgvUvLOaC6qo0Aw7NxbAfs1fe1M3bPMLjg==]
+  - key: DATABASE_URL
+    scope: RUN_TIME
+    value: ${mongo-db.DATABASE_URL}
+  - key: CA_CERT
+    scope: RUN_TIME
+    value: ${mongo-db.CA_CERT}
   github:
     branch: main
-    deploy_on_push: true
     repo: markusJsU21/surveychimp
   http_port: 3333
   instance_count: 1
