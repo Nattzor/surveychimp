@@ -5,4 +5,8 @@ doctl apps create --spec ./dev/create-surveychimp-dev.yaml
 database=$(doctl databases create mongo-db --engine mongodb --version 5)
 
 # doctl databases db create mongo-db prod
+<<<<<<< HEAD
 # doctl databases db create mongo-db dev
+=======
+# doctl databases db create mongo-db dev
+>>>>>>> development
