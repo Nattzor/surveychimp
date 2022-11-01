@@ -1,20 +1,13 @@
 databases:
 - cluster_name: mongo-db
-<<<<<<< HEAD
-=======
   db_name: prod
->>>>>>> development
   engine: MONGODB
   name: mongo-db
   production: true
   version: "5"
-<<<<<<< HEAD
-  db_name: "prod"
-=======
 domains:
 - domain: survey.surveychimp.me
   type: PRIMARY
->>>>>>> development
 name: surveymonkey-production
 region: ams
 services:

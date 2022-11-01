@@ -12,11 +12,7 @@ Content-Type: application/json
 
 ###
 
-<<<<<<< HEAD
-GET {{baseUrl}}/survey/635bd74adf7ebe382b6861ba
-=======
 GET {{baseUrl}}/survey/635a3b76447595cdc91bcfdd
->>>>>>> development
 
 ###
 
