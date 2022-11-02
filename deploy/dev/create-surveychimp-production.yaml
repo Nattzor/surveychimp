@@ -28,6 +28,6 @@ services:
   instance_size_slug: basic-xxs
   name: surveychimp
   routes:
-  - path: /
+  - path: /api
   run_command: node ./dist/apps/surveychimp-api/main.js
   source_dir: /
