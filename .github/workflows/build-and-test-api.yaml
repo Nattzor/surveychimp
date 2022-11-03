@@ -1,7 +1,9 @@
 name: Node.js CI
-paths: 'apps/surveyschimp-api**' 
+
 on:
+
   pull_request:
+  paths: 'apps/surveyschimp-api**' 
     branches: [ development]
 
 jobs:
