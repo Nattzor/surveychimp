@@ -12,11 +12,11 @@ Content-Type: application/json
 
 ###
 
-GET {{baseUrl}}/survey/635a3b76447595cdc91bcfdd
+GET {{baseUrl}}/survey/63637bc0b6614232d5158620
 
 ###
 
-PATCH {{baseUrl}}/survey/635a3b76447595cdc91bcfdd
+PATCH {{baseUrl}}/survey/63637bc0b6614232d5158620
 Content-Type: application/json
 
 {
