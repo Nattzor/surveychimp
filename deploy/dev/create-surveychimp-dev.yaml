@@ -33,16 +33,15 @@ services:
   run_command: node ./dist/apps/surveychimp-api/main.js
   source_dir: /
 static_sites:
-- build_command: npx nx serve surveychimp-survey-spa
+- build_command: npm run build
   catchall_document: index.html
   environment_slug: node-js
-  output_dir: /dist/sureveychimp-survey-spa
   github:
     branch: development
     deploy_on_push: true
     repo: markusJsU21/surveychimp
   name: frontend-spa-dev
+  output_dir: /dist/apps/surveychimp-survey-spa
   routes:
   - path: /
   source_dir: /
-  
