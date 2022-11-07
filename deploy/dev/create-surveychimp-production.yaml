@@ -28,6 +28,18 @@ services:
   instance_size_slug: basic-xxs
   name: surveychimp
   routes:
-  - path: /
+  - path: /api
   run_command: node ./dist/apps/surveychimp-api/main.js
+  source_dir: /
+static_sites:
+- build_command: npm run build
+  catchall_document: index.html
+  environment_slug: node-js
+  github:
+    branch: main
+    repo: markusJsU21/surveychimp
+  name: frontend-spa-prod
+  output_dir: /dist/apps/surveychimp-survey-spa
+  routes:
+  - path: /
   source_dir: /
