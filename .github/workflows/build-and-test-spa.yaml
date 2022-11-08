@@ -1,10 +1,9 @@
-<<<<<<< HEAD
+<<<<<<< HEAD:.github/workflows/build-and-test-syrvey.yaml
 name: Node.js CI
-
 on:
+ 
   pull_request:
     branches: [ development]
-    paths: 'apps/surveyschimp-api**' 
 
 jobs:
   build:
@@ -23,15 +22,13 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm run build --if-present
-      - run: npm run test:api
-    
 =======
 name: Node.js CI
-
 on:
+
   pull_request:
     branches: [ development]
-    paths: 'apps/surveychimp-api**'
+    paths: 'apps/surveychimp-survey-spa**'
 
 jobs:
   build:
@@ -50,5 +47,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm run build --if-present
-      - run: npm run test:api
->>>>>>> 18216b2b00813a27ad414fe9d3e029481a696aa2
+>>>>>>> 18216b2b00813a27ad414fe9d3e029481a696aa2:.github/workflows/build-and-test-spa.yaml
+      - run: npm run test:survey-spa
