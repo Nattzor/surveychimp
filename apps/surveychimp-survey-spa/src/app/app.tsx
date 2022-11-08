@@ -1,3 +1,38 @@
+<<<<<<< HEAD
+
+import styled from 'styled-components';
+import SurveyPage from './pages/SurveyPage';
+
+import { Route, Routes } from 'react-router-dom';
+
+
+
+const StyledApp = styled.div`
+    // Your style here
+`;
+
+
+export function App() {
+
+  return (
+    <StyledApp>
+      <Routes>
+        <Route
+          path="/survey/:surveyId"
+          element={<SurveyPage />}
+        />
+        <Route
+          path="/"
+          element={<div>Du är på förstasidan</div>} />
+      </Routes>
+    </StyledApp>
+  );
+
+}
+
+
+export default App;
+=======
 
 import styled from 'styled-components';
 import SurveyPage from './pages/SurveyPage';
@@ -45,3 +80,4 @@ export function App() {
 
 
 export default App;
+>>>>>>> 18216b2b00813a27ad414fe9d3e029481a696aa2

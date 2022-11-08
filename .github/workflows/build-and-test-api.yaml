@@ -1,3 +1,31 @@
+<<<<<<< HEAD
+name: Node.js CI
+
+on:
+  pull_request:
+    branches: [ development]
+    paths: 'apps/surveyschimp-api**' 
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm run test:api
+    
+=======
 name: Node.js CI
 
 on:
@@ -23,3 +51,4 @@ jobs:
       - run: npm ci
       - run: npm run build --if-present
       - run: npm run test:api
+>>>>>>> 18216b2b00813a27ad414fe9d3e029481a696aa2
