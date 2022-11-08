@@ -1,10 +1,17 @@
 import { Router } from 'express';
-import { addSurvey, addResponseToSurvey, getSurveyById } from '@surveychimp/surveychimp-lib';
+import { addSurvey, addResponseToSurvey, getSurveyById, getAllSurvey } from '@surveychimp/surveychimp-lib';
 import { body, param, validationResult } from 'express-validator';
 import { nextTick } from 'process';
 
 const router = Router();
 //Add comment to try the test
+router.get('/survey',
+async (req, res) => {
+const survey = await getAllSurvey()
+res.json(survey);
+}
+)
+
 router.get(
     '/survey/:surveyId',
     param("surveyId").isMongoId(),
