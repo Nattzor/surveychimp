@@ -2,6 +2,7 @@
 import styled from 'styled-components';
 import SurveyPage from './pages/SurveyPage';
 import TodoPage from './pages/TodoPage';
+import ThankYouPage from './pages/ThankYou'
 
 import { Route, Routes } from 'react-router-dom';
 
@@ -20,6 +21,10 @@ export function App() {
         <Route
           path="/survey/:surveyId"
           element={<SurveyPage />}
+        />
+        <Route
+          path="/thankyou"
+          element={<ThankYouPage />}
         />
         <Route
           path="/"
