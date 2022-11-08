@@ -32,7 +32,6 @@ const SurveyPage = () => {
         onChange={ratingChanged}
         size={24}
         color2={'#ffd700'}/>
-        {/* <div className="star-rating"></div> */}
     </>)
 }
 
