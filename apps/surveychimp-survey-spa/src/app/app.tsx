@@ -36,6 +36,7 @@ export default App;
 
 import styled from 'styled-components';
 import SurveyPage from './pages/SurveyPage';
+import AllSurveysPage from './pages/AllSurveysPage';
 import TodoPage from './pages/TodoPage';
 import ThankYouPage from './pages/ThankYou'
 
@@ -53,6 +54,10 @@ export function App() {
   return (
     <StyledApp>
       <Routes>
+        <Route
+          path="/survey"
+          element={<AllSurveysPage />}
+        />
         <Route
           path="/survey/:surveyId"
           element={<SurveyPage />}
