@@ -15,6 +15,9 @@ Content-Type: application/json
 GET {{baseUrl}}/survey/63637bc0b6614232d5158620
 
 ###
+GET {{baseUrl}}/survey
+
+###
 
 PATCH {{baseUrl}}/survey/63637bc0b6614232d5158620
 Content-Type: application/json
@@ -22,10 +25,8 @@ Content-Type: application/json
 {
     "rating": 3,
     "comment": "Det var toppen!"
-
 }
 
 ###
-
 GET {{baseUrl}}/healthcheck
 
