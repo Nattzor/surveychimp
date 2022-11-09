@@ -1,13 +1,16 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import getSurveyById from '../../api/getSurveyById';
 import sendSurveyResponse from '../../api/sendSurveyResponse';
 import { ISurvey, ISurveyResponse } from '@surveychimp/surveychimp-lib';
 import ReactStars from 'react-stars'
+
 // import { render } from 'react-dom';
 // import React from 'react'
 
+
 const SurveyPage = () => {
+    const navigate = useNavigate();
     const ratingChanged = (newRating: number) => {
         setRating(newRating)
         console.log('newRating är ', newRating)
@@ -31,15 +34,20 @@ const SurveyPage = () => {
         }
     }, [])
 
-    const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
+    const onSubmitHandler = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         const response: ISurveyResponse = {
             rating: rating,
             comment: comment
         }
-      const apiresp = sendSurveyResponse(surveyId, response)
+      const apiresp =  await sendSurveyResponse(surveyId, response)
       console.log('api resp ', apiresp)
-
+      if(apiresp.recipient) {
+        RedirectSurvey()
+    }
+}
+const RedirectSurvey = () => {
+    navigate("/thankyou");
     }
 
     return (<>
