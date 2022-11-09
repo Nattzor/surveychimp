@@ -37,7 +37,7 @@ const SurveyPage = () => {
             rating: rating,
             comment: comment
         }
-      const apiresp =  sendSurveyResponse(surveyId, response)
+      const apiresp = sendSurveyResponse(surveyId, response)
       console.log('api resp ', apiresp)
 
     }
