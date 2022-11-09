@@ -23,15 +23,17 @@ const SurveyPage = () => {
         }
     }, [])
 
-
     return (<>
         <h1>Survey</h1>
         <p>{survey?.recipient.name}</p>
-        <ReactStars
-        count={5}
-        onChange={ratingChanged}
-        size={24}
-        color2={'#ffd700'}/>
+        <form action="subtmit">
+            <ReactStars
+            count={5}
+            onChange={ratingChanged}
+            size={24}
+            color2={'#ffd700'}/>
+            <input type="submit" />
+        </form>
     </>)
 }
 
