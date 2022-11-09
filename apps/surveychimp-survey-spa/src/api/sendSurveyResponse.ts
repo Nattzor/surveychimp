@@ -4,9 +4,12 @@ const sendSurveyResponse = async (surveyId: string | undefined, response: ISurve
     return (await fetch(`http://localhost:4200/api/survey/${surveyId}`, {
         method: 'PATCH',
         body: JSON.stringify({
-            rating: new Number(response.rating),
+            rating: response.rating,
             comment: response.comment,
           }),
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+          },
     })).json();
 }
 
