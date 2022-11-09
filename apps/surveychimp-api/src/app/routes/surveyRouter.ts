@@ -56,6 +56,7 @@ router.patch('/survey/:surveyId',
     body("comment").isString().optional(),
 
     async (req, res, next) => {
+        console.log('survey är ', req.params.surveyId, req.body)
         try {
             //validation
             const errors = validationResult(req);
