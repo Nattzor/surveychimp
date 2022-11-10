@@ -72,6 +72,17 @@ router.patch('/survey/:surveyId',
         }
     });
 
+router.delete('/survey/:surveyId',
+    async (req, res, next) => {
+        try{
+            console.log('Försöker deleta survey...', req.params.surveyId)
+            res.status(200).json({message: `OBS INTE PÅ RIKTIGT: The survey with id ${req.params.surveyId} has been deleted`}).send()
+        }catch(err){
+            console.log('Error när survey skulle deletas')
+            next(err)
+        }
+    })
+
 
 router.get('/api/todos', (req, res) => res.status(200).send());
 
