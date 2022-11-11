@@ -18,11 +18,17 @@ const AllSurveysPage = () => {
     }, [])
     console.log('test ', allSurveys)
 
-    const handleClick = (event: React.MouseEvent<HTMLElement>, item:SurveyWithId) => {
+    const handleClick = async (event: React.MouseEvent<HTMLElement>, item:SurveyWithId) => {
         console.log('item är ', item._id)
-        deleteSurvey(item._id).then(result => {
-            console.log(result)
-        })
+        try{
+            await deleteSurvey(item._id).then(result => {
+                 console.log(result)
+                 setAllSurveys(allSurveys.filter(survey => survey._id !== item._id))
+             })
+
+        }catch(err){
+            console.log(err)
+        }
     }
     // type SurveyWithOnlyId = {
     //     id:
