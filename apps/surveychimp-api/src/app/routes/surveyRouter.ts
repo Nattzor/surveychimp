@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { addSurvey, addResponseToSurvey, getSurveyById, getAllSurvey } from '@surveychimp/surveychimp-lib';
+import { addSurvey, addResponseToSurvey, getSurveyById, getAllSurvey, deleteSurvey } from '@surveychimp/surveychimp-lib';
 import { body, param, validationResult } from 'express-validator';
 import { nextTick } from 'process';
 
@@ -76,6 +76,7 @@ router.delete('/survey/:surveyId',
     async (req, res, next) => {
         try{
             console.log('Försöker deleta survey...', req.params.surveyId)
+            deleteSurvey(req.params.surveyId)
             res.status(200).json({message: `OBS INTE PÅ RIKTIGT: The survey with id ${req.params.surveyId} has been deleted`}).send()
         }catch(err){
             console.log('Error när survey skulle deletas')
