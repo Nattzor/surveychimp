@@ -44,7 +44,7 @@ export function App() {
 }
 
 const methodDoesNotExist = () => {
-  throw new Error("My first SPA  error!");
+  throw new Error('this is a SPA error');
 }
 
 export default App;
