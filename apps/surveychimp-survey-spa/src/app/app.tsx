@@ -4,6 +4,7 @@ import SurveyPage from './pages/SurveyPage';
 import AllSurveysPage from './pages/AllSurveysPage';
 import TodoPage from './pages/TodoPage';
 import ThankYouPage from './pages/ThankYou'
+import finnsInte from './finnsInte'
 
 import { Route, Routes } from 'react-router-dom';
 
@@ -33,18 +34,18 @@ export function App() {
         />
         <Route
           path="/"
-          element={<div><div>Du är på förstasidan</div> <button onClick={methodDoesNotExist}>Break the world</button></div>}/>
+          element={<div>Du är på förstasidan</div>}/>
         <Route
           path="/todos"
           element={<TodoPage/>} />
+          <Route
+          path="/finnsInte"
+          element={<finnsInte/>}/>
       </Routes>
     </StyledApp>
   );
 
 }
 
-const methodDoesNotExist = () => {
-  throw new Error('this is a SPA error');
-}
 
 export default App;
