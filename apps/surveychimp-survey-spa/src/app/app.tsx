@@ -4,7 +4,7 @@ import SurveyPage from './pages/SurveyPage';
 import AllSurveysPage from './pages/AllSurveysPage';
 import TodoPage from './pages/TodoPage';
 import ThankYouPage from './pages/ThankYou'
-import finnsInte from './finnsInte'
+import FinnsInte from './finnsInte'
 
 import { Route, Routes } from 'react-router-dom';
 
@@ -40,7 +40,7 @@ export function App() {
           element={<TodoPage/>} />
           <Route
           path="/finnsInte"
-          element={<finnsInte/>}/>
+          element={<FinnsInte/>}/>
       </Routes>
     </StyledApp>
   );
