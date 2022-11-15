@@ -2,7 +2,7 @@ import { ISurvey, ISurveyResponse } from '@surveychimp/surveychimp-lib';
 
 const sendSurveyResponse = async (surveyId: string | undefined, response: ISurveyResponse): Promise<ISurvey>  => {
 
-    return (await fetch(`http://localhost:4200/api/survey/${surveyId}`, {
+    return (await fetch(`/api/survey/${surveyId}`, {
         method: 'PATCH',
         body: JSON.stringify({
             rating: response.rating,

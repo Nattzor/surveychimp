@@ -1,7 +1,7 @@
 import { ISurvey } from '@surveychimp/surveychimp-lib';
 
 const deleteSurvey = async (surveyId: string): Promise<object> => {
-    return (await fetch(`http://localhost:4200/api/survey/${surveyId}`, {
+    return (await fetch(`/api/survey/${surveyId}`, {
         method: 'DELETE',
         // body: JSON.stringify({
         //     id: surveyId
