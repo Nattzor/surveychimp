@@ -61,7 +61,6 @@ const RedirectSurvey = () => {
             color2={'#ffd700'}/>
             <input type="text" onChange={(e)=>addComment(e)} />
             <input type="submit" />
-            <button onClick={methodDoesNotExist}>Break the world</button>
         </form>
     </>)
 }
