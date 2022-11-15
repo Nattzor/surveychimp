@@ -87,4 +87,8 @@ router.delete('/survey/:surveyId',
 
 router.get('/api/todos', (req, res) => res.status(200).send());
 
+router.get("/debug-sentry", function mainHandler(req, res) {
+    throw new Error("My first Sentry error!");
+  });
+
 export default router;
