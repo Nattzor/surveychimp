@@ -1,6 +1,7 @@
 
 import styled from 'styled-components';
 import SurveyPage from './pages/SurveyPage';
+import SurveyPage4star from './pages/SurveyPage4star';
 import AllSurveysPage from './pages/AllSurveysPage';
 import TodoPage from './pages/TodoPage';
 import ThankYouPage from './pages/ThankYou'
@@ -23,10 +24,15 @@ export function App() {
           path="/survey"
           element={<AllSurveysPage />}
         />
-        <Route
+        {process.env.NX_4STAR_RATING ? <Route
           path="/survey/:surveyId"
           element={<SurveyPage />}
-        />
+        /> : <Route
+        path="/survey/:surveyId"
+        element={<SurveyPage4star />}
+      /> }
+
+
         <Route
           path="/thankyou"
           element={<ThankYouPage />}
