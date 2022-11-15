@@ -33,7 +33,7 @@ export function App() {
         />
         <Route
           path="/"
-          element={<div>Du är på förstasidan</div>} />
+          element={<div><div>Du är på förstasidan</div> <button onClick={methodDoesNotExist}>Break the world</button></div>}/>
         <Route
           path="/todos"
           element={<TodoPage/>} />
