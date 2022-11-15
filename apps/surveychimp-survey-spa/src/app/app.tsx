@@ -24,13 +24,13 @@ export function App() {
           path="/survey"
           element={<AllSurveysPage />}
         />
-        {process.env.NX_4STAR_RATING ? <Route
-          path="/survey/:surveyId"
-          element={<SurveyPage />}
-        /> : <Route
+        {process.env.NX_4STAR_RATING === "true" ? <Route
         path="/survey/:surveyId"
         element={<SurveyPage4star />}
-      /> }
+      /> : <Route
+          path="/survey/:surveyId"
+          element={<SurveyPage />}
+        /> }
 
 
         <Route
