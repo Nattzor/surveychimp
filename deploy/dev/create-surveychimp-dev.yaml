@@ -38,7 +38,7 @@ static_sites:
   environment_slug: node-js
   envs:
   - key: NX_4STAR_RATING
-    scope: RUN_TIME
+    scope: BUILD_TIME
     value: "false"
   github:
     branch: development
