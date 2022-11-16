@@ -36,6 +36,10 @@ static_sites:
 - build_command: npm run build
   catchall_document: index.html
   environment_slug: node-js
+  envs:
+  - key: NX_4STAR_RATING
+    scope: BUILD_TIME
+    value: "false"
   github:
     branch: development
     deploy_on_push: true

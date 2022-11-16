@@ -1,18 +1,19 @@
-@baseUrl=http://localhost:3333
+# @baseUrl=http://localhost:3333
+@baseUrl=https://surveymonkey-development-ctrns.ondigitalocean.app/api
 
 POST {{baseUrl}}/survey
 Content-Type: application/json
 
 {
     "recipient": {
-        "name": "Meeko",
-        "mobileNumber": "070 123 12 12"
+        "name": "Heltny",
+        "mobileNumber": "070 111 99 99"
     }
 }
 
 ###
 
-GET {{baseUrl}}/survey/63637bc0b6614232d5158620
+GET {{baseUrl}}/survey/637386147e9e86ecd489d7a3
 
 ###
 GET {{baseUrl}}/survey

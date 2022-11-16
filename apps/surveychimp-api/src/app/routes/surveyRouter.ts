@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { addSurvey, addResponseToSurvey, getSurveyById, getAllSurvey } from '@surveychimp/surveychimp-lib';
+import { addSurvey, addResponseToSurvey, getSurveyById, getAllSurvey, deleteSurvey } from '@surveychimp/surveychimp-lib';
 import { body, param, validationResult } from 'express-validator';
 import { nextTick } from 'process';
 
@@ -56,6 +56,7 @@ router.patch('/survey/:surveyId',
     body("comment").isString().optional(),
 
     async (req, res, next) => {
+        console.log('survey är ', req.params.surveyId, req.body)
         try {
             //validation
             const errors = validationResult(req);
@@ -71,7 +72,23 @@ router.patch('/survey/:surveyId',
         }
     });
 
+router.delete('/survey/:surveyId',
+    async (req, res, next) => {
+        try{
+            console.log('Försöker deleta survey...', req.params.surveyId)
+            deleteSurvey(req.params.surveyId)
+            res.status(200).json({message: `OBS INTE PÅ RIKTIGT: The survey with id ${req.params.surveyId} has been deleted`}).send()
+        }catch(err){
+            console.log('Error när survey skulle deletas')
+            next(err)
+        }
+    })
+
 
 router.get('/api/todos', (req, res) => res.status(200).send());
+
+router.get("/debug-sentry", function mainHandler(req, res) {
+    throw new Error("My first Sentry error!");
+  });
 
 export default router;

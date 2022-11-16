@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "start:spa": "npx env-cmd -f apps/surveychimp-survey-spa/.env.local nx serve surveychimp-survey-spa",
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
@@ -11,7 +12,11 @@
   },
   "private": true,
   "dependencies": {
+    "@sentry/node": "^7.19.0",
+    "@sentry/react": "^7.19.0",
+    "@sentry/tracing": "^7.19.0",
     "core-js": "^3.6.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.1",
     "express-validator": "^6.14.2",
     "mongoose": "^6.6.7",

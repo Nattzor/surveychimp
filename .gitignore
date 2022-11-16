@@ -1,5 +1,13 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+#env
+*.local.env
+*.env
+*.env.local
+.local.env
+.env
+.env.local
+
 # compiled output
 /dist
 /tmp

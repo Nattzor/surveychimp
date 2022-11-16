@@ -55,7 +55,7 @@ const RedirectSurvey = () => {
         <p>{survey?.recipient.name}</p>
         <form action="submit" onSubmit={onSubmitHandler}>
             <ReactStars
-            count={5}
+            count={4}
             onChange={ratingChanged}
             size={24}
             color2={'#ffd700'}/>
