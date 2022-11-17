@@ -4,6 +4,7 @@ import getSurveyById from '../../api/getSurveyById';
 import sendSurveyResponse from '../../api/sendSurveyResponse';
 import { ISurvey, ISurveyResponse } from '@surveychimp/surveychimp-lib';
 import ReactStars from 'react-stars'
+import useAnalyticsEventTracker from '../hooks/useAnalyticsEventTracker';
 
 // import { render } from 'react-dom';
 // import React from 'react'
@@ -34,7 +35,7 @@ const SurveyPage = () => {
         }
     }, [])
 
-    const onSubmitHandler = async (event: React.FormEvent<HTMLFormElement>) => {
+    const OnSubmitHandler = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         const response: ISurveyResponse = {
             rating: rating,
@@ -42,6 +43,7 @@ const SurveyPage = () => {
         }
       const apiresp =  await sendSurveyResponse(surveyId, response)
       console.log('api resp ', apiresp)
+      useAnalyticsEventTracker({category: 'rating', value: response.rating})
       if(apiresp.recipient) {
         RedirectSurvey()
     }
@@ -53,7 +55,7 @@ const RedirectSurvey = () => {
     return (<>
         <h1>Survey</h1>
         <p>{survey?.recipient.name}</p>
-        <form action="submit" onSubmit={onSubmitHandler}>
+        <form action="submit" onSubmit={OnSubmitHandler}>
             <ReactStars
             count={4}
             onChange={ratingChanged}
