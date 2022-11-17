@@ -6,10 +6,10 @@ import SurveyPage4star from './pages/SurveyPage4star';
 import AllSurveysPage from './pages/AllSurveysPage';
 import TodoPage from './pages/TodoPage';
 import ThankYouPage from './pages/ThankYou'
+import ReactGA from 'react-ga4'
+import { useEffect } from 'react'
 
-
-
-
+ReactGA.initialize('G-4RCWL3QZ0P')
 
 const StyledApp = styled.div`
     // Your style here
@@ -17,6 +17,11 @@ const StyledApp = styled.div`
 
 
 export function App() {
+
+  useEffect(() => {
+    ReactGA.send('pageview');
+  }, []);
+
   console.log('env ', process.env.NX_4STAR_RATING)
   return (
     <StyledApp>
