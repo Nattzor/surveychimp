@@ -35,6 +35,9 @@ const SurveyPage = () => {
         }
     }, [])
 
+
+
+
     const OnSubmitHandler = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         const response: ISurveyResponse = {
@@ -43,11 +46,11 @@ const SurveyPage = () => {
         }
       const apiresp =  await sendSurveyResponse(surveyId, response)
       console.log('api resp ', apiresp)
-      useAnalyticsEventTracker({category: 'rating', value: response.rating})
+      useAnalyticsEventTracker('rating')
       if(apiresp.recipient) {
         RedirectSurvey()
     }
-}
+ }
 const RedirectSurvey = () => {
     navigate("/thankyou");
     }
