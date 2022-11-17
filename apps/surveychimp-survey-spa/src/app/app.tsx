@@ -1,5 +1,5 @@
 
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import SurveyPage from './pages/SurveyPage';
 import SurveyPage4star from './pages/SurveyPage4star';
@@ -9,17 +9,22 @@ import ThankYouPage from './pages/ThankYou'
 import ReactGA from 'react-ga4'
 import { useEffect } from 'react'
 
+// custom hook to get the current pathname in React
+
+
 ReactGA.initialize('G-4RCWL3QZ0P')
 
 const StyledApp = styled.div`
-    // Your style here
+// Your style here
 `;
 
 
 export function App() {
 
+
   useEffect(() => {
-    ReactGA.send('pageview');
+console.log('usePath??', window.location.pathname)
+ReactGA.send({ hitType: "pageview", page: window.location.pathname });
   }, []);
 
   console.log('env ', process.env.NX_4STAR_RATING)
