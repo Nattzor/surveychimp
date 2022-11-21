@@ -1,5 +1,5 @@
 
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import styled from 'styled-components';
 import SurveyPage from './pages/SurveyPage';
 import SurveyPage4star from './pages/SurveyPage4star';
