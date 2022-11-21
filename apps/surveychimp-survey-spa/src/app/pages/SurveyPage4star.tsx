@@ -5,12 +5,15 @@ import sendSurveyResponse from '../../api/sendSurveyResponse';
 import { ISurvey, ISurveyResponse } from '@surveychimp/surveychimp-lib';
 import ReactStars from 'react-stars'
 import useAnalyticsEventTracker from '../hooks/useAnalyticsEventTracker';
+import useExperiment from '../hooks/useExperiment';
 
 // import { render } from 'react-dom';
 // import React from 'react'
 
 
 const SurveyPage = () => {
+    const variant = useExperiment('OPT-KQD3G8C');
+    console.log('variant', variant);
     const navigate = useNavigate();
     const ratingChanged = (newRating: number) => {
         setRating(newRating)
