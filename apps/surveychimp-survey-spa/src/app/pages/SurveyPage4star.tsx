@@ -12,7 +12,7 @@ import useExperiment from '../hooks/useExperiment';
 
 
 const SurveyPage = () => {
-    const variant = useExperiment('OPT-KQD3G8C');
+    const variant = useExperiment('tqPsCf3DQiqCBNxjC4fnQA');
     console.log('variant', variant);
     const navigate = useNavigate();
     const ratingChanged = (newRating: number) => {
